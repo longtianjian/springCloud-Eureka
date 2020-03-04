@@ -1,0 +1,15 @@
+server:
+  port: 8100
+###服务名称
+spring:
+  application:
+    name: app-springcloud-eureka-server
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #单机版，因为自己是注册中心，注册eureka和检索设置false
+    register-with-eureka: false
+    fetch-registry: false
